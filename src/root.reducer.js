@@ -1,16 +1,7 @@
 import { combineReducers } from 'redux'
-import { UserDetailReducer, 
-            UserListReducer,
-            UserLoginReducer,
-            UserJoinReducer,
-            UserUpdateReducer
-} from './user/index'
+import { userReducer } from './uss/modules/index'
 
 export const rootReducer = combineReducers({
-    UserDetailReducer, 
-    UserListReducer,
-    UserLoginReducer,
-    UserJoinReducer,
-    UserUpdateReducer
+   userReducer
 })
 export default rootReducer

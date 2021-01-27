@@ -5,26 +5,24 @@ import PropTypes from 'prop-types'
 import { createStore } from 'redux'
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import { rootReducer } from './root.reducer'
-import { Main } from './Main'
-import { UserLogin } from './user/index'
-import { UserJoin } from './user/index'
-import { UserDetail } from './user/index'
-import { UserUpdate } from './user/index'
-import { UserList } from './user/index'
-
-
+import { MainPage } from './MainPage'
+import { UserLoginPage,
+         UserJoinPage,
+         UserDetailPage,
+         UserUpdatePage,
+         UserListPage } from './uss/pages/index'
 
 export const RootRouter = () => {
     return (<>
     <Provider store={createStore(rootReducer)}>
         <BrowserRouter>
             <Switch>
-                <Route exact path='/' component={Main}/>
-                <Route path='/user-login' component={UserLogin}/>
-                <Route path='/user-join' component={UserJoin}/>
-                <Route path='/user-detail' component={UserDetail}/>
-                <Route path='/user-list' component={UserList}/>
-                <Route path='/user-update' component={UserUpdate}/>
+                <Route exact path='/' component={MainPage}/>
+                <Route path='/user-login' component={UserLoginPage}/>
+                <Route path='/user-join' component={UserJoinPage}/>
+                <Route path='/user-detail' component={UserDetailPage}/>
+                <Route path='/user-list' component={UserListPage}/>
+                <Route path='/user-update' component={UserUpdatePage}/>
                 <Route component={Error}/> 
             </Switch>
         </BrowserRouter>
